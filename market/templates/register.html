@@ -6,6 +6,7 @@
 {% block content %}
     <div class="container">
     <form method="POST" class="form-register" style="color:white">
+        {{ form.hidden_tag() }}
         <img class="mb-4" src="static/img/Abdullah.png" alt="">
             <h1 class="h3 mb-3 font-weight-normal">
                 Please Create your Account
@@ -21,7 +22,11 @@
 
         {{ form.password2.label() }}
         {{ form.password2(class="form-control", placeholder="Confirm Password") }}
+        <br>
+
+        {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
 
     </form>
-    </div>
+</div>
+</body>
 {% endblock %}
