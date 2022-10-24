@@ -20,3 +20,10 @@ class RegisterForm(FlaskForm):
         if email_address:
             raise ValidationError('Email already used, Please try to use onther one 😁!')
     
+class LoginForm(FlaskForm):
+    username = StringField(label='User Name: ', validators=[DataRequired()])
+    password = PasswordField(label='Password: ', validators=[DataRequired()])
+    submit = SubmitField(label='Sign in')
+
+
+
