@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+    Add item
+{% endblock %}
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-register" style="color:white">
+            <!-- ### understand ###  -->
+            {{ form.hidden_tag() }}
+            <br>
+            <h1>Create New Item</h1>
+            {{ form.name.label() }} 
+            {{ form.name(class="form-control", placeholder="Item name") }}
+            
+            {{ form.price.label() }}
+            {{ form.price(class="form-control", placeholder="Price") }}
+            
+            {{ form.barcode.label() }}
+            {{ form.barcode(class="form-control", placeholder="Barcode") }}
+            
+            {{ form.description.label() }}
+            {{ form.description(class="form-control", placeholder="Description") }}
+            
+            <br>
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+        </form>
+    </div>
+    </body>
+{% endblock %}
