@@ -13,12 +13,12 @@ class RegisterForm(FlaskForm):
     def validate_username(self, check_new_username):
         user = User.query.filter_by(username=check_new_username.data).first()
         if user:
-            raise ValidationError('Username already used, Please try to use onther one 😁!')
+            raise ValidationError('Username already used, Please try to use onther one !')
 
     def validate_email_address(self, check_new_email):
         email_address = User.query.filter_by(email_address=check_new_email.data).first()
         if email_address:
-            raise ValidationError('Email already used, Please try to use onther one 😁!')
+            raise ValidationError('Email already used, Please try to use onther one !')
     
 class LoginForm(FlaskForm):
     username = StringField(label='User Name: ', validators=[DataRequired()])
